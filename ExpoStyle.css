@@ -4,20 +4,8 @@
 
 body {
     text-align: center;
-}
-
-.main-hero {
-  background-image: "images/background.gif";
-  background-position: 10%;
-  background-position-y: center;
-}
-.fc-fullpage {
+    background-image: url('images/background.gif');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
+    background-attachment: fixed;
 }
