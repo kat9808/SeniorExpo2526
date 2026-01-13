@@ -1,11 +1,59 @@
 .title {
-    color: darkblue;
+    color: rgb(23, 247, 255);
+    font-family: 'Arial Black', sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 10px 20px; 
+    border-radius: 10px;
 }
 
 body {
     text-align: center;
-    background-image: url('images/background.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+#mainDiv {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 50px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+}
+
+img {
+    width: 175px;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* Background options */
+body.bg1 {
+    background-image: url('images/background.gif');
+}
+
+body.bg2 {
+    background-image: url('images/cozy.gif');
+}
+
+body.bg3 {
+    background-image: url('images/fall.gif');
+}
+
+body.bg4 {
+    background-image: url('images/night.gif');
+}
+
+body.bg5 {
+    background-image: url('images/waterfall.webp');
 }
