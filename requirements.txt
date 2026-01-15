@@ -1,3 +1,5 @@
 # this is a list of python packages that are going to be uploaded to the website
-requests
-beautifulsoup4
+requests=2.32.5
+beautifulsoup4=4.14.3
+pony=0.7.19
+psycopg2=2.9.11
