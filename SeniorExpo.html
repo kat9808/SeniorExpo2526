@@ -8,18 +8,28 @@
     </head>
     
     <body>
-        <h1 class="title">Welcome!</h1>
-        <br/>
+        <!-- Main Search Page -->
+        <div id="searchPage" class="page">
+            <h1 class="title">Welcome!</h1>
+            <br/>
 
-        <img src="images/atclogo.jfif">
-        <br/>
-        
-        <div id="mainDiv">Search for an item:</div>
-        <br/>
-        
-        <input type="text">
-        <br/>
-        <br/>
-        <button onclick="buttonClicked()">Search</button>
+            <img src="images/ATC_Logo.png" alt="Senior Expo Logo" class="centerImage"/>
+            <br/>
+            
+            <div id="mainDiv">Search for an item:</div>
+            <br/>
+            
+            <input type="text" id="searchInput" placeholder="Enter your search...">
+            <br/>
+            <br/>
+            <button onclick="handleSearch()">Search</button>
+        </div>
+
+        <!-- Results Page -->
+        <div id="resultsPage" class="page" style="display:none;">
+            <button onclick="goBack()" class="backButton">← Back to Search</button>
+            <h2 id="searchTitle" class="searchTitle"></h2>
+            <div id="resultsDiv" class="resultsContainer"></div>
+        </div>
     </body>
 </html>

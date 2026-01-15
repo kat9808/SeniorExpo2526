@@ -1,5 +1,5 @@
 .title {
-    color: rgb(23, 247, 255);
+    color: rgb(32, 243, 250);
     font-family: 'Arial Black', sans-serif;
     font-size: 40px;
     margin-top: 20px;
@@ -19,7 +19,7 @@ body {
 }
 
 #mainDiv {
-    color: red;
+    color: white;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
@@ -29,17 +29,17 @@ body {
     font-size: 18px;
 }
 
-img {
+.centerImage { 
     width: 175px;
     height: auto;
-    border: 5px solid white;
-    border-radius: 15px;
+    border: 5px solid rgba(128, 120, 120, 0.938);
+    border-radius: 25px;
     margin-top: 20px;
 }
 
 /* Background options */
 body.bg1 {
-    background-image: url('images/background.gif');
+    background-image: url('images/bird.gif');
 }
 
 body.bg2 {
@@ -51,9 +51,71 @@ body.bg3 {
 }
 
 body.bg4 {
-    background-image: url('images/night.gif');
+    background-image: url('images/city.gif');
 }
 
 body.bg5 {
     background-image: url('images/waterfall.webp');
+}
+
+body.bg6 {
+    background-image: url('images/train.gif');
+}
+
+body.bg7 {
+    background-image: url('images/ocean.gif');
+}
+
+/* Page layout styling */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Results page styling */
+#resultsPage {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.searchTitle {
+    color: rgb(23, 247, 255);
+    font-family: 'Arial Black', sans-serif;
+    font-size: 32px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.resultsContainer {
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.backButton {
+    background-color: rgba(23, 247, 255, 0.3);
+    color: rgb(23, 247, 255);
+    border: 2px solid rgb(23, 247, 255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: rgb(23, 247, 255);
+    color: black;
 }
