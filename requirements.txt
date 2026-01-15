@@ -1,0 +1,3 @@
+# this is a list of python packages that are going to be uploaded to the website
+requests
+beautifulsoup4
