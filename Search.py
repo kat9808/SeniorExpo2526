@@ -32,7 +32,7 @@ def SearchWeb(estore, session):
     resp = session.get(url)
     soup = BeautifulSoup(resp.text, "html.parser")
     data = (
-        f"{estore}", float(soup.select_one("a-price aok-align-center reinventPricePriceToPayMargin priceToPay a-price-whole").text)
+        f"{estore}", float(soup.select_one("a-section a-spacing-none aok-align-center aok-relative a-price-whole").text)
 #        f"{estore}", float(soup.select_one(estorePriceSelector[estore]).text)
 
     )
