@@ -1,2 +1,11 @@
-fly.toml
-.venv
+env/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.env
+.git
+.gitignore
+*.db
