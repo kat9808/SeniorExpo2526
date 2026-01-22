@@ -1,3 +1,4 @@
 # this is a list of python packages that are going to be uploaded to the website
-beautifulsoup4
-requests
+requests==2.32.5
+beautifulsoup4==4.14.3
+
