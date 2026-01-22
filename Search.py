@@ -38,6 +38,11 @@ def css(filename):
 def js(filename):
     return send_from_directory('.', f'{filename}.js')
 
+# Serve images from the images folder
+@app.route('/images/<path:filename>')
+def images(filename):
+    return send_from_directory('images', filename)
+
 # Example API endpoint that uses the database
 @app.route('/api/data')
 def get_data():
