@@ -3,7 +3,7 @@ Get prompt from website
 Get and apply filters to prompt
 Search websites
 Get data
-Store data on sql database
+Store data on postgresql database
 
 
 '''
@@ -55,4 +55,3 @@ def get_data():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
-    main()
