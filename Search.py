@@ -4,7 +4,8 @@ Get and apply filters to prompt
 Search websites
 Get data
 Store data on postgresql database
-
+postgres connection string: postgres://postgres:hqruyrABLah8Ghb@search-db.flycast:5432
+format                      postgres://username:password@hostname:5432/database
 
 '''
 import requests

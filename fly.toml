@@ -1,8 +1,6 @@
 # fly.toml app configuration file generated for seniorexpo2526 on 2026-01-20T17:51:09Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-# postgres connection string: postgres://postgres:hqruyrABLah8Ghb@search-db.flycast:5432
-# format                      postgres://username:password@hostname:5432/database
 
 app = 'seniorexpo2526'
 primary_region = 'dfw'
