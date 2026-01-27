@@ -1,16 +1,8 @@
 '''
-Get prompt from website
-Get and apply filters to prompt
-Search websites
-Get data
-Store data on postgresql database
 postgres connection string: postgres://postgres:hqruyrABLah8Ghb@search-db.flycast:5432
 format                      postgres://username:password@hostname:5432/database
-
 '''
-import requests
-from bs4 import BeautifulSoup
-from pony import orm
+
 from flask import Flask, render_template, send_from_directory, jsonify
 import psycopg2
 import os
@@ -24,7 +16,7 @@ def get_db_connection():
     conn = psycopg2.connect(os.environ.get('DATABASE_URL'))
     return conn
 
-# Serve your HTML file
+# Serve HTML file
 @app.route('/')
 def index():
     return send_from_directory('.', 'SeniorExpo.html')
@@ -44,7 +36,7 @@ def js(filename):
 def images(filename):
     return send_from_directory('images', filename)
 
-# Example API endpoint that uses the database
+# Example API endpoint that retrieves data using the database
 @app.route('/api/data')
 def get_data():
     try:
