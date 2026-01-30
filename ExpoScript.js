@@ -1,3 +1,4 @@
+/*
 // Sample product data
 const productDatabase = {
     'iphone': [
@@ -28,7 +29,7 @@ const productDatabase = {
         { name: 'iPad Air', price: '$599', store: 'Amazon', availability: 'In Stock' }
     ]
 };
-
+*/
 // Set random background on page load
 window.addEventListener('DOMContentLoaded', function() {
     const backgrounds = ['bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6', 'bg7'];
@@ -36,6 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add(randomBg);
 });
 
+/* Not needed anymore
 // Function to search and display matching products
 function searchProducts(query) {
     const queryLower = query.toLowerCase();
@@ -50,7 +52,7 @@ function searchProducts(query) {
     // Return null if no match found
     return null;
 }
-
+*/
 // Function to create HTML for result items
 function createResultHTML(products) {
     let html = '';
@@ -68,7 +70,7 @@ function createResultHTML(products) {
 }
 
 // Function to handle search button click
-function handleSearch() {
+async function handleSearch() {
     const searchInput = document.getElementById('searchInput').value.trim();
     
     // Validate input
@@ -85,16 +87,28 @@ function handleSearch() {
     document.getElementById('searchTitle').textContent = 'Search Results for: "' + searchInput + '"';
     
     // Search for products matching the input
-    const results = searchProducts(searchInput);
     const resultsDiv = document.getElementById('resultsDiv');
-    
-    if (results) {
-        resultsDiv.innerHTML = createResultHTML(results);
-    } else {
-        resultsDiv.innerHTML = '<p style="color: white; text-align: center; padding: 40px;">No products found. Try searching for: iPhone, Laptop, Headphones, Watch, or iPad</p>';
+    try {
+        const response = await fetch('/api/search', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query: searchInput })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.results.length > 0) {
+            resultsDiv.innerHTML = createResultHTML(data.results);
+        } else {
+            resultsDiv.innerHTML = '<p style="color: white; text-align: center; padding: 40px;">No products found. Try a different search term.</p>';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        resultsDiv.innerHTML = '<p style="color: white; text-align: center; padding: 40px;">Error loading results. Please try again.</p>';
     }
 }
-
 // Function to go back to search page
 function goBack() {
     document.getElementById('searchPage').style.display = 'block';
