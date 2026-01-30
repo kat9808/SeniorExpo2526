@@ -54,12 +54,14 @@ def search_product(product):
             price = item.get("price", "N/A")
             store = item.get("source", "Unknown Store")
             availability = item.get("availability", "In Stock")
+            link = item.get("link", "#")
 
             results.append({
                 "name": name,
                 "price": price,
                 "store": store,
-                "availability": availability
+                "availability": availability,
+                "link": link
             })
     
     # Save results to database

@@ -58,7 +58,7 @@ function createResultHTML(products) {
     let html = '';
     products.forEach(product => {
         html += `
-            <div class="resultItem">
+            <div class="resultItem" data-link="${product.link}" style="cursor: pointer;">
                 <h3>${product.name}</h3>
                 <p><strong>Price:</strong> ${product.price}</p>
                 <p><strong>Store:</strong> ${product.store}</p>
@@ -67,6 +67,13 @@ function createResultHTML(products) {
         `;
     });
     return html;
+}
+
+// Function to open product link in new tab
+function openProductLink(url) {
+    if (url && url !== '#') {
+        window.open(url, '_blank');
+    }
 }
 
 // Function to handle search button click
@@ -101,6 +108,13 @@ async function handleSearch() {
         
         if (data.success && data.results.length > 0) {
             resultsDiv.innerHTML = createResultHTML(data.results);
+
+            document.querySelectorAll('.resultItem').forEach(item => {
+                item.addEventListener('click', function() {
+                    const link = this.getAttribute('data-link');
+                    openProductLink(link);
+                });
+            });
         } else {
             resultsDiv.innerHTML = '<p style="color: white; text-align: center; padding: 40px;">No products found. Try a different search term.</p>';
         }
