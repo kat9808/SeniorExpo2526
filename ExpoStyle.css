@@ -280,3 +280,33 @@ button {
     font-size: clamp(12px, 3.5vw, 14px);
     line-height: 1.6;
 }
+
+/* Loader styles */
+.loader {
+    width: 48px;
+    height: 48px;
+    margin: 0; /* centered by wrapper */
+    border: 6px solid rgba(255, 255, 255, 0.15);
+    border-top-color: rgb(32, 243, 250);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Overlay to center the loader without affecting header/back */
+#resultsPage { position: relative; }
+.loaderOverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    pointer-events: all; /* block interactions while loading */
+    background: transparent;
+    padding-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
