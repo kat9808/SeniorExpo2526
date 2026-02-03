@@ -3,7 +3,7 @@ SerpApi Keys
 To set serapi key run 'flyctl secrets set SERPAPI_KEY=api_key_here'
 Api Key 1: 01e13608c615a24478340d303da39547195a310c983c5f2b177c6cdeb9ac9000
 Api Key 2:
-Api Key 3:
+Api Key 3: e9a4d923f6b180ec618a7fa019dac783ffc135a2a902e6e16e3a9c8e233579b0
 '''
 
 from pony.orm import Database, Required, Optional, db_session, Json
