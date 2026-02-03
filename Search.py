@@ -2,7 +2,7 @@
 SerpApi Keys 
 To set serapi key run 'flyctl secrets set SERPAPI_KEY=api_key_here'
 Api Key 1: 01e13608c615a24478340d303da39547195a310c983c5f2b177c6cdeb9ac9000
-Api Key 2:
+Api Key 2: 40208e412ed75e3823909873528fdf11be6b5ff6432b7829bedb02eaf2830ebc
 Api Key 3:
 '''
 
