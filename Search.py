@@ -1,3 +1,11 @@
+'''
+SerpApi Keys 
+To set serapi key run 'flyctl secrets set SERPAPI_KEY=api_key_here'
+Api Key 1: 01e13608c615a24478340d303da39547195a310c983c5f2b177c6cdeb9ac9000
+Api Key 2:
+Api Key 3:
+'''
+
 from pony.orm import Database, Required, Optional, db_session, Json
 from datetime import datetime, timedelta
 from flask import Flask, render_template, send_from_directory, jsonify
