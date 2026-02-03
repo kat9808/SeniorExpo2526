@@ -281,6 +281,25 @@ button {
     line-height: 1.6;
 }
 
+/* Make the entire result clickable via the inner anchor and preserve styling */
+.resultItem .resultLink {
+    color: inherit;
+    text-decoration: none;
+    display: block; /* allow the anchor to fill the item */
+}
+
+.resultItem .resultLink:hover,
+.resultItem .resultLink:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+/* Ensure visible focus for accessibility */
+.resultItem .resultLink:focus-visible {
+    box-shadow: 0 0 0 3px rgba(32, 243, 250, 0.25);
+    border-radius: 4px;
+}
+
 /* Loader styles */
 .loader {
     width: 48px;

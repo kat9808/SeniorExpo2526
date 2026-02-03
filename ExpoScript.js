@@ -71,12 +71,17 @@ const MIN_SPINNER_MS = 400; // minimum time (ms) the spinner should be visible t
 function createResultHTML(products) {
     let html = '';
     products.forEach(product => {
+        // Use the product link if available, otherwise use a harmless '#'
+        const href = (product.link && product.link !== '#') ? product.link : '#';
+        const safeHref = String(href).replace(/"/g, '&quot;');
         html += `
-            <div class="resultItem" data-link="${product.link}" style="cursor: pointer;">
-                <h3>${product.name}</h3>
-                <p><strong>Price:</strong> ${product.price}</p>
-                <p><strong>Store:</strong> ${product.store}</p>
-                <p><strong>Availability:</strong> ${product.availability}</p>
+            <div class="resultItem">
+                <a class="resultLink" href="${safeHref}" target="_blank" rel="noopener noreferrer">
+                    <h3>${product.name}</h3>
+                    <p><strong>Price:</strong> ${product.price}</p>
+                    <p><strong>Store:</strong> ${product.store}</p>
+                    <p><strong>Availability:</strong> ${product.availability}</p>
+                </a>
             </div>
         `;
     });
@@ -171,12 +176,8 @@ async function handleSearch() {
             if (overlay && overlay.parentElement) overlay.parentElement.removeChild(overlay);
             resultsDiv.innerHTML = createResultHTML(data.results);
 
-            document.querySelectorAll('.resultItem').forEach(item => {
-                item.addEventListener('click', function() {
-                    const link = this.getAttribute('data-link');
-                    openProductLink(link);
-                });
-            });
+            // Navigation is handled by the <a> links inside each .resultItem (supports keyboard and mouse actions)
+
         } else {
             if (overlay && overlay.parentElement) overlay.parentElement.removeChild(overlay);
             resultsDiv.innerHTML = '<p style="color: white; text-align: center; padding: 40px;">No products found. Try a different search term.</p>';
